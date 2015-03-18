@@ -51,7 +51,7 @@ def tree_json(tree, feature_names=None):
 
     # Check if node is a leaf
     if tree.children_left[node_id] == sklearn.tree._tree.TREE_LEAF:
-      return '"id": "%s", "criterion:" "%s", "impurity": "%s", "samples": "%s", "value:" [%s]' \
+      return '"id": "%s", "criterion": "%s", "impurity": "%s", "samples": "%s", "value": [%s]' \
         % (node_id, criterion, tree.impurity[node_id], tree.n_node_samples[node_id], value_str)
 
     else:
@@ -68,7 +68,7 @@ def tree_json(tree, feature_names=None):
         rule_type = "<="
         rule_value = "%.4f" % tree.threshold[node_id]
 
-      return '"id": "%s", "rule:" "%s %s %s", "%s": "%s", "samples:" "%s"' \
+      return '"id": "%s", "rule": "%s %s %s", "%s": "%s", "samples": "%s"' \
         % (node_id, feature, rule_type, rule_value, criterion, tree.impurity[node_id], tree.n_node_samples[node_id])
 
   # Builds json by recursively traversing down tree
@@ -88,9 +88,9 @@ def tree_json(tree, feature_names=None):
     # Recurse left and right children unless current node is a leaf
     if left_child != sklearn.tree._tree.TREE_LEAF:
       json = json + ",\n" + \
-        tabs + '  "left:" ' + \
+        tabs + '  "left": ' + \
         recurse_tree(tree, left_child, criterion=criterion, depth=depth+1) + ",\n" + \
-        tabs + '  "right:"  ' + \
+        tabs + '  "right":  ' + \
         recurse_tree(tree, right_child, criterion=criterion, depth=depth+1)
 
     json = json + tabs + "\n" + \
@@ -106,7 +106,5 @@ def tree_json(tree, feature_names=None):
     json = json + recurse_tree(tree.tree_, 0, criterion=tree.criterion)
 
   return json
-
-      
 
 get_tree()
