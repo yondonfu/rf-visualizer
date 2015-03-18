@@ -29,7 +29,7 @@ def get_tree():
   classifier = DecisionTreeClassifier()
   classifier.fit(train_samples, train_labels)
 
-  print tree_json(classifier)
+  print tree_json(classifier, feature_names=['sepal_length', 'sepal_width', 'petal_length', 'petal_width'])
 
 
 def rf_json(forest, feature_names=None):
@@ -43,6 +43,8 @@ def tree_json(tree, feature_names=None):
   def node_to_str(tree, node_id, criterion):
 
     value = tree.value[node_id]
+
+    print value
 
     if tree.n_outputs == 1:
       value = value[0, :]
@@ -60,13 +62,10 @@ def tree_json(tree, feature_names=None):
       else:
         feature = tree.feature[node_id]
 
-      # Check if feature is discrete category
-      if isinstance(feature, basestring):
-        rule_type = "="
-        rule_value = "false"
-      else:
-        rule_type = "<="
-        rule_value = "%.4f" % tree.threshold[node_id]
+      # TODO: Check if feature is discrete category
+
+      rule_type = "<="
+      rule_value = "%.4f" % tree.threshold[node_id]
 
       return '"id": "%s", "rule": "%s %s %s", "%s": "%s", "samples": "%s"' \
         % (node_id, feature, rule_type, rule_value, criterion, tree.impurity[node_id], tree.n_node_samples[node_id])
