@@ -28,8 +28,8 @@ def get_rf():
     f.write(tree_json(classifier.trees[i], feature_names=['sepal_length', 'sepal_width', 'petal_length', 'petal_width']))
     f.close()
 
-  print classifier.score(test_samples, test_labels)
-  print classifier.oob_score
+  # print classifier.score(test_samples, test_labels)
+  # print classifier.oob_score
 
 def get_tree():
   iris = datasets.load_iris()

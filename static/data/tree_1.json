@@ -1,19 +1,19 @@
 
 {
-  "id": "0", "rule": "petal_length <= 2.6000", "gini": "0.665396825397", "samples": "105",
+  "id": "0", "rule": "petal_width <= 0.8000", "gini": "0.666485260771", "samples": "105",
   "left": 
   {
-    "id": "1", "criterion": "gini", "impurity": "0.0", "samples": "32", "value": [32.0, 0.0, 0.0]  
+    "id": "1", "criterion": "gini", "impurity": "0.0", "samples": "36", "value": [36.0, 0.0, 0.0]  
   },
   "right":  
   {
-    "id": "2", "rule": "petal_width <= 1.6500", "gini": "0.499906173766", "samples": "73",
+    "id": "2", "rule": "petal_width <= 1.6500", "gini": "0.499894980046", "samples": "69",
     "left": 
     {
-      "id": "3", "rule": "petal_length <= 4.9500", "gini": "0.0973044049967", "samples": "39",
+      "id": "3", "rule": "petal_length <= 5.2500", "gini": "0.102264426589", "samples": "37",
       "left": 
       {
-        "id": "4", "criterion": "gini", "impurity": "0.0", "samples": "37", "value": [0.0, 37.0, 0.0]      
+        "id": "4", "criterion": "gini", "impurity": "0.0", "samples": "35", "value": [0.0, 35.0, 0.0]      
       },
       "right":  
       {
@@ -22,7 +22,7 @@
     },
     "right":  
     {
-      "id": "6", "criterion": "gini", "impurity": "0.0", "samples": "34", "value": [0.0, 0.0, 34.0]    
+      "id": "6", "criterion": "gini", "impurity": "0.0", "samples": "32", "value": [0.0, 0.0, 32.0]    
     }  
   }
 }

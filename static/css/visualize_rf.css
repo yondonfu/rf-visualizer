@@ -18,3 +18,11 @@
   stroke: #FF66FF;
   stroke-width: 2px;
 }
+
+#rf-subtitle {
+  margin-top: 20px;
+}
+
+#predict-button {
+  margin-left: 10px;
+}

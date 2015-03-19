@@ -2,4 +2,22 @@
 {% block title %} - Home{% endblock %}
 {% block content %}
 
+<div class="container page">
+  <div class="content">
+    <div class="hero-unit">
+      <h1>Random Forest Visualizer</h1>
+
+      <p id="rf-subtitle">Train a random forest using the Iris dataset and visualize predictions</p>
+    </div>
+
+    <button type="submit" id="train-button" class="btn btn-default">
+      Train
+    </button>
+
+    <button type="submit" id="predict-button" class="btn btn-default">
+      Predict
+    </button>
+  </div>
+</div>
+
 {% endblock %}

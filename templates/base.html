@@ -3,16 +3,21 @@
   <head>
     {% block head %}
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RFVisualizer{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="/static/css/visualize_rf.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-responsive.css">
     {% endblock %}
   </head>
   <body>
     {% block content %}
 
     {% endblock %}
-
+    
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="/static/js/bootstrap.js"></script>
     <script src="/static/js/visualize_rf.js"></script>
   </body>
 </html>

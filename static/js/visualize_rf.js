@@ -1,3 +1,19 @@
+$(function() {
+  $('#train-button').bind('click', function() {
+    $.ajax({
+      url:'/train',
+    }).done(function(data) {
+      if (data.result == true) {
+        console.log("Success");
+        update(roots[0]);
+        update(roots[1]);
+        update(roots[2]);
+        update(roots[3]);
+      }
+    });
+  });
+
+});
 
 function formatJson(json) {
   var result = {};
@@ -25,9 +41,9 @@ function formatJson(json) {
   return result;
 }
 
-var margin = {top: 20, right: 120, bottom: 20, left: 200},
+var margin = {top: 10, right: 120, bottom: 10, left: 200},
   width = 1200 - margin.right - margin.left,
-  height = 500 - margin.top - margin.bottom;
+  height = 230 - margin.top - margin.bottom;
 
 var i = 0, duration = 750
 
@@ -52,30 +68,26 @@ for (j = 0; j < svgList.length; j++) {
 
 d3.json("../../static/data/tree_0.json", function(error, treeData) {
   roots[0] = formatJson(treeData);
-  roots[0].x0 = height / 2;
+  roots[0].x0 = height;
   roots[0].y0 = 0;
-  update(roots[0]);
 });
 
 d3.json("../../static/data/tree_1.json", function(error, treeData) {
   roots[1] = formatJson(treeData);
-  roots[1].x0 = height / 3;
+  roots[1].x0 = height;
   roots[1].y0 = 0;
-  update(roots[1]);
 });
 
 d3.json("../../static/data/tree_2.json", function(error, treeData) {
   roots[2] = formatJson(treeData);
-  roots[2].x0 = height / 4;
+  roots[2].x0 = height;
   roots[2].y0 = 0;
-  update(roots[2]);
 });
 
 d3.json("../../static/data/tree_3.json", function(error, treeData) {
   roots[3] = formatJson(treeData);
-  roots[3].x0 = height / 5;
+  roots[3].x0 = height;
   roots[3].y0 = 0;
-  update(roots[3]);
 });
 
 
@@ -176,7 +188,7 @@ function update(source) {
       d.y0 = d.y;
     });
   }
-  
+
 }
 
 // Toggle children on click.
