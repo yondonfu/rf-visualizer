@@ -1,35 +1,51 @@
 
 {
-  "id": "0", "rule": "petal_width <= 0.7500", "gini": "0.659954648526", "samples": "105",
+  "id": "0", "rule": "petal_length <= 2.6000", "gini": "0.654512471655", "samples": "105",
   "left": 
   {
-    "id": "1", "criterion": "gini", "impurity": "0.0", "samples": "42", "value": [42.0, 0.0, 0.0]  
+    "id": "1", "criterion": "gini", "impurity": "0.0", "samples": "28", "value": [28.0, 0.0, 0.0]  
   },
   "right":  
   {
-    "id": "2", "rule": "petal_length <= 4.8500", "gini": "0.499874023684", "samples": "63",
+    "id": "2", "rule": "petal_length <= 4.9500", "gini": "0.489795918367", "samples": "77",
     "left": 
     {
-      "id": "3", "criterion": "gini", "impurity": "0.0", "samples": "31", "value": [0.0, 31.0, 0.0]    
-    },
-    "right":  
-    {
-      "id": "4", "rule": "petal_width <= 1.6500", "gini": "0.060546875", "samples": "32",
+      "id": "3", "rule": "petal_width <= 1.7000", "gini": "0.0454299621417", "samples": "43",
       "left": 
       {
-        "id": "5", "rule": "petal_width <= 1.4500", "gini": "0.5", "samples": "2",
+        "id": "4", "criterion": "gini", "impurity": "0.0", "samples": "40", "value": [0.0, 40.0, 0.0]      
+      },
+      "right":  
+      {
+        "id": "5", "rule": "sepal_width <= 3.1000", "gini": "0.444444444444", "samples": "3",
         "left": 
         {
           "id": "6", "criterion": "gini", "impurity": "0.0", "samples": "1", "value": [0.0, 0.0, 1.0]        
         },
         "right":  
         {
-          "id": "7", "criterion": "gini", "impurity": "0.0", "samples": "1", "value": [0.0, 1.0, 0.0]        
+          "id": "7", "criterion": "gini", "impurity": "0.0", "samples": "2", "value": [0.0, 2.0, 0.0]        
+        }      
+      }    
+    },
+    "right":  
+    {
+      "id": "8", "rule": "petal_width <= 1.7500", "gini": "0.110726643599", "samples": "34",
+      "left": 
+      {
+        "id": "9", "rule": "petal_length <= 5.3500", "gini": "0.5", "samples": "4",
+        "left": 
+        {
+          "id": "10", "criterion": "gini", "impurity": "0.0", "samples": "2", "value": [0.0, 2.0, 0.0]        
+        },
+        "right":  
+        {
+          "id": "11", "criterion": "gini", "impurity": "0.0", "samples": "2", "value": [0.0, 0.0, 2.0]        
         }      
       },
       "right":  
       {
-        "id": "8", "criterion": "gini", "impurity": "0.0", "samples": "30", "value": [0.0, 0.0, 30.0]      
+        "id": "12", "criterion": "gini", "impurity": "0.0", "samples": "30", "value": [0.0, 0.0, 30.0]      
       }    
     }  
   }

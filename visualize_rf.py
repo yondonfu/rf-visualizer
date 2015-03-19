@@ -6,6 +6,7 @@ from sklearn.feature_extraction import DictVectorizer
 from sklearn import datasets
 import sklearn
 from forest import RandomForestClassifier
+import numpy as np
 
 def get_rf():
   iris = datasets.load_iris()
@@ -28,8 +29,30 @@ def get_rf():
     f.write(tree_json(classifier.trees[i], feature_names=['sepal_length', 'sepal_width', 'petal_length', 'petal_width']))
     f.close()
 
+  pred_sample = test_samples[0].tolist()
+  pred = classifier.predict(test_samples[0])[0]
+
+  if pred == 0:
+    pred = 'Iris Setosa'
+  elif pred == 1:
+    pred = 'Iris Versicolour'
+  else:
+    pred = 'Iris Virginica'
+
+  f = open('static/data/rf_prediction.txt', 'w')
+  f.write(pred + '\n')
+  for i in range(len(pred_sample)):
+    f.write(str(pred_sample[i]) + '\n')
+  f.close()
+
   # print classifier.score(test_samples, test_labels)
   # print classifier.oob_score
+
+def get_rf_prediction():
+  with open('static/data/rf_prediction.txt') as f:
+    content = f.readlines()
+
+  return content[0]
 
 def get_tree():
   iris = datasets.load_iris()
@@ -115,3 +138,5 @@ def tree_json(tree, feature_names=None):
     json = json + recurse_tree(tree.tree_, 0, criterion=tree.criterion)
 
   return json
+
+get_rf()

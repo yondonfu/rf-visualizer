@@ -15,6 +15,19 @@ $(function() {
 
 });
 
+$(function() {
+  $('#predict-button').bind('click', function() {
+    $.ajax({
+      url:'/predict',
+    }).done(function(data) {
+      console.log("Success");
+
+      $('#prediction-container').show();
+      $('#prediction').text(data.result);
+    });
+  })
+})
+
 function formatJson(json) {
   var result = {};
 

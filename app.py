@@ -15,5 +15,12 @@ def train():
 
   return jsonify(result=True)
 
+@app.route('/predict')
+def predict():
+
+  pred = visualize_rf.get_rf_prediction()
+
+  return jsonify(result=pred)
+
 if __name__ == '__main__':
   app.run()
