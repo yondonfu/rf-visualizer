@@ -1,10 +1,11 @@
 from warnings import warn
-from sklearn.ensemble import RandomForestClassifier
+# from sklearn.ensemble import RandomForestClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.cross_validation import train_test_split
 from sklearn.feature_extraction import DictVectorizer
 from sklearn import datasets
 import sklearn
+from forest import RandomForestClassifier
 
 def get_rf():
   iris = datasets.load_iris()
@@ -13,11 +14,17 @@ def get_rf():
 
   train_samples, test_samples, train_labels, test_labels = train_test_split(samples, labels, test_size=.3)
 
-  classifier = RandomForestClassifier(n_estimators=10, n_jobs=-1, verbose=3, oob_score=True, max_features=None)
+  # classifier = RandomForestClassifier(n_estimators=10, n_jobs=-1, verbose=3, oob_score=True, max_features=None)
+  # classifier.fit(train_samples, train_labels)
+
+  # print classifier.score(test_samples, test_labels)
+  # print classifier.oob_score_
+
+  classifier = RandomForestClassifier(n_trees=4)
   classifier.fit(train_samples, train_labels)
 
   print classifier.score(test_samples, test_labels)
-  print classifier.oob_score_
+  print classifier.oob_score
 
 def get_tree():
   iris = datasets.load_iris()
@@ -106,4 +113,4 @@ def tree_json(tree, feature_names=None):
 
   return json
 
-get_tree()
+get_rf()
