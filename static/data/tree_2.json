@@ -1,0 +1,60 @@
+
+{
+  "id": "0", "rule": "petal_length <= 2.8500", "gini": "0.657233560091", "samples": "105",
+  "left": 
+  {
+    "id": "1", "criterion": "gini", "impurity": "0.0", "samples": "37", "value": [37.0, 0.0, 0.0]  
+  },
+  "right":  
+  {
+    "id": "2", "rule": "petal_length <= 4.8000", "gini": "0.478806228374", "samples": "68",
+    "left": 
+    {
+      "id": "3", "rule": "sepal_length <= 5.2000", "gini": "0.0739644970414", "samples": "26",
+      "left": 
+      {
+        "id": "4", "criterion": "gini", "impurity": "0.0", "samples": "1", "value": [0.0, 0.0, 1.0]      
+      },
+      "right":  
+      {
+        "id": "5", "criterion": "gini", "impurity": "0.0", "samples": "25", "value": [0.0, 25.0, 0.0]      
+      }    
+    },
+    "right":  
+    {
+      "id": "6", "rule": "petal_width <= 1.7000", "gini": "0.0907029478458", "samples": "42",
+      "left": 
+      {
+        "id": "7", "rule": "petal_length <= 4.9500", "gini": "0.375", "samples": "8",
+        "left": 
+        {
+          "id": "8", "criterion": "gini", "impurity": "0.0", "samples": "1", "value": [0.0, 1.0, 0.0]        
+        },
+        "right":  
+        {
+          "id": "9", "rule": "sepal_length <= 6.0500", "gini": "0.244897959184", "samples": "7",
+          "left": 
+          {
+            "id": "10", "rule": "petal_length <= 5.0500", "gini": "0.5", "samples": "2",
+            "left": 
+            {
+              "id": "11", "criterion": "gini", "impurity": "0.0", "samples": "1", "value": [0.0, 0.0, 1.0]            
+            },
+            "right":  
+            {
+              "id": "12", "criterion": "gini", "impurity": "0.0", "samples": "1", "value": [0.0, 1.0, 0.0]            
+            }          
+          },
+          "right":  
+          {
+            "id": "13", "criterion": "gini", "impurity": "0.0", "samples": "5", "value": [0.0, 0.0, 5.0]          
+          }        
+        }      
+      },
+      "right":  
+      {
+        "id": "14", "criterion": "gini", "impurity": "0.0", "samples": "34", "value": [0.0, 0.0, 34.0]      
+      }    
+    }  
+  }
+}

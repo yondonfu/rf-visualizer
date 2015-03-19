@@ -43,7 +43,7 @@ var svg = d3.select("body").append("svg")
   .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.json("../../static/data/tree.json", function(error, treeData) {
+d3.json("../../static/data/tree_3.json", function(error, treeData) {
   root = formatJson(treeData);
   root.x0 = height / 2;
   root.y0 = 0;

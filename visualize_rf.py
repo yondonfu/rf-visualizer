@@ -23,6 +23,11 @@ def get_rf():
   classifier = RandomForestClassifier(n_trees=4)
   classifier.fit(train_samples, train_labels)
 
+  for i in range(classifier.n_trees):
+    f = open('static/data/tree_' + str(i) + '.json', 'w')
+    f.write(tree_json(classifier.trees[i], feature_names=['sepal_length', 'sepal_width', 'petal_length', 'petal_width']))
+    f.close()
+
   print classifier.score(test_samples, test_labels)
   print classifier.oob_score
 
@@ -50,8 +55,6 @@ def tree_json(tree, feature_names=None):
   def node_to_str(tree, node_id, criterion):
 
     value = tree.value[node_id]
-
-    print value
 
     if tree.n_outputs == 1:
       value = value[0, :]
