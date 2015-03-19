@@ -29,7 +29,6 @@ def get_rf():
     f.write(tree_json(classifier.trees[i], feature_names=['sepal_length', 'sepal_width', 'petal_length', 'petal_width']))
     f.close()
 
-  pred_sample = test_samples[0].tolist()
   pred = classifier.predict(test_samples[0])[0]
 
   if pred == 0:
@@ -39,20 +38,18 @@ def get_rf():
   else:
     pred = 'Iris Virginica'
 
-  f = open('static/data/rf_prediction.txt', 'w')
+  f = open('static/data/rf_predictions.txt', 'a')
   f.write(pred + '\n')
-  for i in range(len(pred_sample)):
-    f.write(str(pred_sample[i]) + '\n')
   f.close()
 
   # print classifier.score(test_samples, test_labels)
   # print classifier.oob_score
 
 def get_rf_prediction():
-  with open('static/data/rf_prediction.txt') as f:
+  with open('static/data/rf_predictions.txt') as f:
     content = f.readlines()
 
-  return content[0]
+  return content[len(content) - 1]
 
 def get_tree():
   iris = datasets.load_iris()
