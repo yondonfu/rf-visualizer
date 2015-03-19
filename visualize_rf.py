@@ -115,5 +115,3 @@ def tree_json(tree, feature_names=None):
     json = json + recurse_tree(tree.tree_, 0, criterion=tree.criterion)
 
   return json
-
-get_rf()
