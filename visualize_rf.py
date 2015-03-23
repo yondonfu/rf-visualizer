@@ -39,7 +39,7 @@ def get_rf():
     pred = 'Iris Virginica'
 
   f = open('static/data/rf_predictions.txt', 'a')
-  f.write(pred + '\n')
+  f.write(str(pred) + '\n')
   f.close()
 
   # print classifier.score(test_samples, test_labels)
@@ -49,7 +49,7 @@ def get_rf_prediction():
   with open('static/data/rf_predictions.txt') as f:
     content = f.readlines()
 
-  return content[len(content) - 1]
+  return content
 
 def get_tree():
   iris = datasets.load_iris()
@@ -135,5 +135,3 @@ def tree_json(tree, feature_names=None):
     json = json + recurse_tree(tree.tree_, 0, criterion=tree.criterion)
 
   return json
-
-get_rf()

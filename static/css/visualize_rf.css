@@ -10,7 +10,7 @@
 
 .node text {
   font-size: 12px;
-  font-family: "Helvetica-Neue", Helvetica, sans-serif;
+  font-family: "PT-Sans", Helvetica, sans-serif;
 }
 
 .link {
@@ -19,12 +19,25 @@
   stroke-width: 2px;
 }
 
+#rf-title {
+  margin-top: 25px;
+  font-family: "PT-Sans", Helvetica, sans-serif;
+  letter-spacing: -2px;
+  font-weight: 300;
+}
+
 #rf-subtitle {
+  font-family: "PT-Serif", Helvetica, sans-serif;
+  font-style: oblique;
   margin-top: 20px;
 }
 
 #predict-button {
   margin-left: 10px;
+}
+
+#rf-buttons {
+  margin-top: 25px;
 }
 
 #prediction-container {

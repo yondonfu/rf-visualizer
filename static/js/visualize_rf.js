@@ -23,7 +23,11 @@ $(function() {
       console.log("Success");
 
       $('#prediction-container').show();
-      $('#prediction').text(data.result);
+      $('#tree-1-pred').text(data.result[0]);
+      $('#tree-2-pred').text(data.result[1]);
+      $('#tree-3-pred').text(data.result[2]);
+      $('#tree-4-pred').text(data.result[3]);
+      $('#prediction').text(data.result[4]);
     });
   })
 })
@@ -55,14 +59,16 @@ function formatJson(json) {
 }
 
 var margin = {top: 10, right: 120, bottom: 10, left: 200},
-  width = 1200 - margin.right - margin.left,
+  width = 2000 - margin.right - margin.left,
   height = 230 - margin.top - margin.bottom;
 
-var i = 0, duration = 750
+var i = 0, duration = 1000
 
 var roots = [0, 0, 0, 0];
 
-var tree = d3.layout.tree().size([height, width]);
+var tree = d3.layout.tree()
+  .separation(function(a, b) { return (a.parent == b.parent ? 1 : 2); })
+  .size([height, width]);
 
 var diagonal = d3.svg.diagonal().projection(function(d) {
   return [d.y, d.x];

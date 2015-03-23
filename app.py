@@ -18,9 +18,9 @@ def train():
 @app.route('/predict')
 def predict():
 
-  pred = visualize_rf.get_rf_prediction()
+  preds = visualize_rf.get_rf_prediction()
 
-  return jsonify(result=pred)
+  return jsonify(result=preds)
 
 if __name__ == '__main__':
   app.run()

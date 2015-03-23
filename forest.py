@@ -49,12 +49,13 @@ class RandomForestClassifier(object):
     return self
 
   def predict(self, samples):
-
+    
     predictions = [t.predict(samples) for t in self.trees]
 
     f = open('static/data/rf_predictions.txt', 'w')
     for i in range(len(predictions)):
-      pred = predictions[i].tolist()
+      pred = predictions[i].tolist()[0]
+
       if pred == 0:
         pred = 'Iris Setosa'
       elif pred == 1:
@@ -62,7 +63,7 @@ class RandomForestClassifier(object):
       else:
         pred = 'Iris Virginica'
 
-      f.write(pred + '\n')
+      f.write(str(pred) + '\n')
     f.close()
 
     predictions = np.asarray(predictions)

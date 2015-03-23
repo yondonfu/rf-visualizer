@@ -4,24 +4,41 @@
 
 <div class="container page">
   <div class="content">
-    <div class="hero-unit">
-      <h1>Random Forest Visualizer</h1>
+    <h1 id="rf-title">Random Forest Visualizer</h1>
 
-      <p id="rf-subtitle">Train a random forest using the Iris dataset and visualize predictions</p>
+    <p id="rf-subtitle">Train a random forest using the Iris dataset and visualize predictions</p>
+  
+    <div id="rf-buttons">
+      <button type="submit" id="train-button" class="btn btn-default">
+        Train
+      </button>
+
+      <button type="submit" id="predict-button" class="btn btn-default">
+        Predict
+      </button>
     </div>
 
-    <button type="submit" id="train-button" class="btn btn-default">
-      Train
-    </button>
-
-    <button type="submit" id="predict-button" class="btn btn-default">
-      Predict
-    </button>
 
     <div id="prediction-container" style="display:none;">
       <p>
         Random Forest Prediction: 
         <strong><span id="prediction"></span></strong>
+      </p>
+      <p>
+        Decision Tree 1 Prediction:
+        <strong><span id="tree-1-pred"></span></strong>
+      </p>
+      <p>
+        Decision Tree 2 Prediction:
+        <strong><span id="tree-2-pred"></span></strong>
+      </p>
+      <p>
+        Decision Tree 3 Prediction:
+        <strong><span id="tree-3-pred"></span></strong>
+      </p>
+      <p>
+        Decision Tree 4 Prediction:
+        <strong><span id="tree-4-pred"></span></strong>
       </p>
     </div>
   </div>
