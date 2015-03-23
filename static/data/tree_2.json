@@ -1,36 +1,60 @@
 
 {
-  "id": "0", "rule": "petal_width <= 0.7000", "gini": "0.651972789116", "samples": "105",
+  "id": "0", "rule": "petal_length <= 4.7500", "gini": "0.636009070295", "samples": "105",
   "left": 
   {
-    "id": "1", "criterion": "gini", "impurity": "0.0", "samples": "44", "value": [44.0, 0.0, 0.0]  
-  },
-  "right":  
-  {
-    "id": "2", "rule": "petal_width <= 1.7000", "gini": "0.489115829078", "samples": "61",
+    "id": "1", "rule": "petal_length <= 2.4500", "gini": "0.453686200378", "samples": "69",
     "left": 
     {
-      "id": "3", "rule": "petal_length <= 5.0000", "gini": "0.054012345679", "samples": "36",
+      "id": "2", "criterion": "gini", "impurity": "0.0", "samples": "22", "value": [22.0, 0.0, 0.0]    
+    },
+    "right":  
+    {
+      "id": "3", "rule": "sepal_length <= 4.9500", "gini": "0.0416478044364", "samples": "47",
       "left": 
       {
-        "id": "4", "criterion": "gini", "impurity": "0.0", "samples": "33", "value": [0.0, 33.0, 0.0]      
+        "id": "4", "criterion": "gini", "impurity": "0.0", "samples": "1", "value": [0.0, 0.0, 1.0]      
       },
       "right":  
       {
-        "id": "5", "rule": "petal_width <= 1.5500", "gini": "0.444444444444", "samples": "3",
+        "id": "5", "criterion": "gini", "impurity": "0.0", "samples": "46", "value": [0.0, 46.0, 0.0]      
+      }    
+    }  
+  },
+  "right":  
+  {
+    "id": "6", "rule": "petal_width <= 1.7000", "gini": "0.104938271605", "samples": "36",
+    "left": 
+    {
+      "id": "7", "rule": "petal_length <= 4.9500", "gini": "0.444444444444", "samples": "6",
+      "left": 
+      {
+        "id": "8", "criterion": "gini", "impurity": "0.0", "samples": "1", "value": [0.0, 1.0, 0.0]      
+      },
+      "right":  
+      {
+        "id": "9", "rule": "petal_width <= 1.5500", "gini": "0.32", "samples": "5",
         "left": 
         {
-          "id": "6", "criterion": "gini", "impurity": "0.0", "samples": "1", "value": [0.0, 0.0, 1.0]        
+          "id": "10", "criterion": "gini", "impurity": "0.0", "samples": "3", "value": [0.0, 0.0, 3.0]        
         },
         "right":  
         {
-          "id": "7", "criterion": "gini", "impurity": "0.0", "samples": "2", "value": [0.0, 2.0, 0.0]        
+          "id": "11", "rule": "sepal_length <= 6.6000", "gini": "0.5", "samples": "2",
+          "left": 
+          {
+            "id": "12", "criterion": "gini", "impurity": "0.0", "samples": "1", "value": [0.0, 1.0, 0.0]          
+          },
+          "right":  
+          {
+            "id": "13", "criterion": "gini", "impurity": "0.0", "samples": "1", "value": [0.0, 0.0, 1.0]          
+          }        
         }      
       }    
     },
     "right":  
     {
-      "id": "8", "criterion": "gini", "impurity": "0.0", "samples": "25", "value": [0.0, 0.0, 25.0]    
+      "id": "14", "criterion": "gini", "impurity": "0.0", "samples": "30", "value": [0.0, 0.0, 30.0]    
     }  
   }
 }
